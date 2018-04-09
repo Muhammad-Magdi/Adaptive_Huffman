@@ -10,18 +10,20 @@ private:
     Node *parent;
     Node *left, *right;
     int freq;
+    int data;
 public:
     Node();									//default Constructor
-    Node(int aFreq);				        //initial Frequency
-    Node(Node*, Node*, Node*, int = 1);		    //Parent, Left, Right and Frequancy
-    static void swap(Node* &, Node* &);            //Swaps two sub-Trees
-    int getFrequency();
-    Node* getParent();
-    Node* getLeft();
-    Node* getRight();
+    Node(int , int = 1);				        //initial data and Frequency
+    Node(Node*, Node*, Node*, int = 0, int = 1);		    //Parent, Left, Right, data and Frequancy
+    int getFrequency() const;
+    int getData() const;
+    Node* getParent() const ;
+    Node* getLeft()const ;
+    Node* getRight() const ;
     void setParent(Node*);
     void setLeft(Node*);
     void setRight(Node*);
+    void setData(int data);
     void incrementFrequency();
 };
 

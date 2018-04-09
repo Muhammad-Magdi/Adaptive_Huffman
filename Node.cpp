@@ -5,40 +5,61 @@
 #include "Node.h"
 
 Node ::Node(){
+    data = 0;
     freq = 0;
     parent = left = right = nullptr;
 }
 
-Node ::Node(int aFreq) {
+Node ::Node(int aData, int aFreq) {
+    data = aData;
     freq = aFreq;
     parent = left = right = nullptr;
 }
 
-Node ::Node(Node *aParent, Node *aLeft, Node *aRight, int aFreq) {
+Node ::Node(Node *aParent, Node *aLeft, Node *aRight, int aData, int aFreq) {
+    data = aData;
     freq = aFreq;
     parent = aParent;
     left = aLeft;
     right = aRight;
 }
 
-void Node ::swap(Node *&nA, Node *&nB) {
-    Node* nT = nA;
-    nA = nB;
-    nB = nT;
+int Node ::getFrequency() const{
+    return freq;
 }
 
-int Node ::getFrequency() {return freq;}
+Node* Node ::getParent() const{
+    return parent;
+}
 
-Node* Node ::getParent() {return parent;}
+Node* Node ::getLeft() const{
+    return left;
+}
 
-Node* Node ::getLeft() {return left;}
+Node* Node ::getRight() const{
+    return right;
+}
 
-Node* Node ::getRight() {return right;}
+int Node ::getData() const {
+    return data;
+}
 
-void Node ::setParent(Node *aParent) {parent = aParent;}
+void Node ::setParent(Node *aParent) {
+    parent = aParent;
+}
 
-void Node ::setLeft(Node *aLeft) {left = aLeft;}
+void Node ::setLeft(Node *aLeft) {
+    left = aLeft;
+}
 
-void Node ::setRight(Node *aRight) {right = aRight;}
+void Node ::setRight(Node *aRight) {
+    right = aRight;
+}
 
-void Node ::incrementFrequency() {++freq;}
+void Node::setData(int data) {
+    Node::data = data;
+}
+
+void Node ::incrementFrequency() {
+    ++freq;
+}
